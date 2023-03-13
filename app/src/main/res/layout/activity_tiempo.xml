@@ -23,6 +23,7 @@
         android:layout_height="437dp"
         android:layout_marginTop="44dp"
         android:autoSizeTextType="none"
+        android:scrollbars="vertical"
         android:text="Hoy estará nublado y habrá una temperatura de 1ºC. "
         android:textColor="#040404"
         android:textSize="34sp"

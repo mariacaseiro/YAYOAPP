@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.speech.tts.TextToSpeech;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
 
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
@@ -63,54 +66,50 @@ public class ActivityTiempo extends AppCompatActivity {
 
         //Documentacion: https://github.com/Prominence/openweathermap-java-api/blob/master/docs/Release_2.3.0.md
         OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient(BuildConfig.OPENWEATHER_KEY);
+        try {
 
-        final Weather weather  = openWeatherClient
-                .currentWeather()
-                .single()
-                .byCityName("A Coruña")
-                .language(Language.SPANISH)
-                .unitSystem(UnitSystem.METRIC)
-                .retrieve()
-                .asJava();
+            final Weather weather = openWeatherClient
+                    .currentWeather()
+                    .single()
+                    .byCityName("A Coruña")
+                    .language(Language.SPANISH)
+                    .unitSystem(UnitSystem.METRIC)
+                    .retrieve()
+                    .asJava();
 
-        //Volvemos a la politica original
-        StrictMode.setThreadPolicy(goodPolicy);
+            //Volvemos a la politica original
+            StrictMode.setThreadPolicy(goodPolicy);
 
-        Byte nubosity = weather.getClouds().getValue();
-        String weatherState = weather.getWeatherState().getDescription();
-        int temperature = (int) weather.getTemperature().getValue();
-        int humidity = weather.getHumidity().getValue();
-        double windVelocity = weather.getWind().getSpeed();
+            Byte nubosity = weather.getClouds().getValue();
+            String weatherState = weather.getWeatherState().getDescription();
+            int temperature = (int) weather.getTemperature().getValue();
+            int humidity = weather.getHumidity().getValue();
+            double windVelocity = weather.getWind().getSpeed();
 
-        /*
-        String weatherState = "muy nuboso";
-        int temperature = 13;
-        int humidity = 80;
-        double windVelocity = 7.2;
-        Byte nubosity = 9;
-        */
+            this.prediction = "Hoy el cielo estará " + weatherState + " y habrá una temperatura de " + temperature + "ºC. " +
+                    "La humedad es del " + humidity + "% y la velocidad del viento de " + windVelocity + " km/h.";
+            this.recomendation = "Te recomiendo que te pongas ";
+            if (temperature < 15) {
+                this.recomendation += "un jersey.";
+            } else if (temperature > 25) {
+                this.recomendation += "una blusa o camiseta.";
+            } else {
+                this.recomendation += "un polo o chaqueta fina.";
+            }
+            if (nubosity > 60) {
+                this.recomendation += "No te olvides de coger paraguas!";
+            }
 
-        this.prediction = "Hoy el cielo estará "+weatherState+" y habrá una temperatura de "+temperature+"ºC. "+
-                            "La humedad es del "+humidity+"% y la velocidad del viento de "+windVelocity+" km/h.";
-        this.recomendation ="Te recomiendo que te pongas ";
-        if(temperature < 15){
-            this.recomendation += "un jersey.";
+            textPrediccion = (TextView) findViewById(R.id.text_prediccion);
+            //Allow scroll to fit prediction text to screen
+            textPrediccion.setMovementMethod(new ScrollingMovementMethod());
+            textPrediccion.setText("Obteniendo predicción . . .");
+
+            obtainRecomendation();
+        }catch(Exception e){
+            textPrediccion.setText("No es posible obtener la predicción. \n Revisa tu conexión a Internet!");
+            e.printStackTrace();
         }
-        else if(temperature > 25){
-            this.recomendation += "una blusa o camiseta.";
-        }
-        else{
-            this.recomendation += "un polo o chaqueta fina.";
-        }
-        if(nubosity > 60){
-            this.recomendation += "No te olvides de coger paraguas!";
-        }
-
-        textPrediccion = (TextView)findViewById(R.id.text_prediccion);
-        //textPrediccion.setText(this.prediction+"\n"+this.recomendation);
-        textPrediccion.setText("Obteniendo predicción . . .");
-
-        obtainRecomendation();
     }
 
 
@@ -162,6 +161,7 @@ public class ActivityTiempo extends AppCompatActivity {
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error) {
+                textPrediccion.setText(prediction+"\n\n"+recomendation);
                 System.out.println("Error en la llamada: "+error.getMessage());
             }
         }){
@@ -177,6 +177,9 @@ public class ActivityTiempo extends AppCompatActivity {
                 return super.parseNetworkResponse(response);
             }
         };
+        //Max time to request: 3 seconds
+        RetryPolicy policy = new DefaultRetryPolicy(3000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        mJsonRequest.setRetryPolicy(policy);
 
         mRequestQueue.add(mJsonRequest);
         System.out.println("Al final del metodo!");
