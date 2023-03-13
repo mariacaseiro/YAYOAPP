@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAsistente">
+
+    <View
+        android:id="@+id/top_bar6"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/main_degradado"
+        android:backgroundTint="#020202"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="295dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#000000"
+        android:text="QUIERO APRENDER ALGO NUEVO"
+        android:onClick="openChatbot2"
+        android:textColor="#FDFDFD"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="295dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="#000000"
+        android:text="ME ABURRO, NECESITO HABLAR CON ALGUIEN"
+        android:onClick="openChatbot"
+        android:textColor="#FDFDFD"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar6" />
+
+    <ImageButton
+        android:id="@+id/speakButton"
+        android:layout_width="151dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/boton_redondeado"
+        android:backgroundTint="#020202"
+        android:fontFamily="sans-serif-black"
+        android:onClick="openChatbot"
+        android:padding="40px"
+        android:scaleType="centerInside"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/icono_mic" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_horizontal"
+        android:text="¡Pregúntame lo que quieras!"
+        android:textColor="#040404"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/speakButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="248dp"
+        android:layout_height="81dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="ASISTENTE"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/top_bar6"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintStart_toStartOf="@+id/top_bar6"
+        tools:layout_editor_absoluteY="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

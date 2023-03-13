@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1080px"
+    android:layout_height="2200px"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/top_bar_main"
+        android:layout_width="413dp"
+        android:layout_height="120dp"
+        android:background="@drawable/main_degradado"
+        android:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="¡Buenas noches!"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Sábado 25 de Febrero"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="346dp"
+        android:layout_height="541dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_main">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="540dp"
+            android:gravity="center_horizontal">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="15px">
+
+
+                <ImageButton
+                    android:id="@+id/boton_llamar"
+                    android:layout_marginRight="10dp"
+                    android:background="#00FFFFFF"
+                    android:onClick="goLlamar"
+                    app:srcCompat="@drawable/llamar"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/boton_asistente"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00FFFFFF"
+                    android:onClick="goAsistente"
+                    app:srcCompat="@drawable/asistente"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingTop="15px">
+
+                <ImageButton
+                    android:id="@+id/boton_medicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="#00FFFFFF"
+                    android:onClick="goMedicacion"
+                    app:srcCompat="@drawable/medicacion"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
+                    android:id="@+id/boton_tiempo"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="#00FFFFFF"
+                    android:onClick="goTiempo"
+                    app:srcCompat="@drawable/tiempo"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

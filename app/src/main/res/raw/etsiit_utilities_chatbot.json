@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "etsiit-utilities-chatbot-idea",
+  "private_key_id": "3b81191a5e592b686afd5e9cc5bdc8bf17dc76fa",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLiR4k/9LBcudu\nbSwuI+/xc9cQGlUevV+7OO7HPQWpp0KBOyzxX2at7tpuuDz1dkbRM1jBldAJYo97\nWRLk538oTrdekNLJTZBahOednueSJ3FDVnaela2qswXzNX5wNrlS3lpgSHZJVfWv\nbMpdVuQAPgYIsdJfYv8Dz4mHzcG2PamkPR/ytnACdjm1YF2fG7lTMH3OnCdnjQsg\nFPxZ5l54QEGmRnRonluqqq+kPiVltk8xTQCHha6cVQ7NWnq+czDYp4dkBck04lkf\nn5+h9yNUreDZeNAz0usDpglkXIJP09e8PEBH23e16Pq6yNXcwMNo5gimlGRcdSbp\n/f2ujAwzAgMBAAECggEACdwfA7fVsKothlUixysI6QkT9nAjU3vlDIYAVNKJJbDR\nyr557OKsPLZncOZ0vYdfSUWHG5Zzhe2qYCIhuJXZiRnwtCB1gmvDF6Xi+oKQjhOV\neKefOdhFmd4jGacSJ8MSGaH/5GfEoys9qnCtiCjSnr7I2AvIa/dSinXq7OANoROO\nUJgdwZlX56gCK8Wh6x6ZfBSVvRnF3SJzKvNKIJlpgeG2C+pQK+m/lIbrIZ09QHA8\nAt3Zz20S20w4USfQAIr6+5SJUtm34YXi8ggx2nTuAnM0Ewx9LI8N4vHa4LV3lD35\nf7b21LpDjRhM2vYZO5Y+e86o8PphG/SEZdk04ulNkQKBgQDpthB5fUx0WlfXVwJb\nl/xjYy4jpiF84CS0jDbMeGJTJDOCj9R5fNksKdq736XRY4dczr1V+59S8MDaGmdJ\nM2GzHlXtQ4ySbIhXkiSME3mO4Cd+GGxoEVfFjX7jSYepXWCRnsO/Prg+IUA2GpB8\nGLgEqmrwMefsmpMKMtImvlXTjQKBgQDe8lUqTb/qWjt1g1BbcJVebhWfVgdoyV+7\n99GFZS53Ph2WvFzxjJAapRcRTUo0IqPdErYfdgZdDzizN6Hqt5BqpxoVpQSWzKj9\nl4yAt1NSYm3tXIglvGk1nvFdDWsQOLxJG4fH26r95eMF1qcH3a+fIYmU677o+WPn\n82OcrZeOvwKBgFs7Ph0ew2ycI7Qk+/+jSdvGSKmT3XiwysNMBMw2pjNMa2spGElA\nakpqID+8oy8kyh95eMGK0vv+jVnWesFBdH8GdYaEGujBw0tj+i5QH+CdMe1wPUk2\nk+vDO2ggOPvtPpg5wLH0GtnuAvHb1tEKmTMBD3OqF53uDT4q7ow/OqO1AoGBAI2F\nJHyLCBT6HB43Mc4phBeCJ6WSFXf1xBhscgqMNNeqjVu+y/zkriDLxP3Noxm/F2dg\n1kzYPafa3rIc0WJODZU153/v1R7oYSlAhwa52GFGa+MtRps1o09PSoU33EtayGJb\n4HAER+GNiPOO005R8YZA4rWug+wdSsbVH9k39Cm/AoGBAMl8p20AliojxKerugNP\nuZhRe/4JIT93CEl/mXR/UhlFDXS2ASBF6alYwr7B1ybCehFdAu3d9E/sQ3WlhDrm\nwkvyc0NqKKFoCIyleZQGXPIqB3idRoveB4Z0lB/FT2LMt0gT4Up07su3tT4HXBh0\nqkU5JnPq3K/QDdnQfQQINwXW\n-----END PRIVATE KEY-----\n",
+  "client_email": "etsiit-utilities@etsiit-utilities-chatbot-idea.iam.gserviceaccount.com",
+  "client_id": "110487693971044860337",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/etsiit-utilities%40etsiit-utilities-chatbot-idea.iam.gserviceaccount.com"
+}

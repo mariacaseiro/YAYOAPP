@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/USC/HackatonUDC/hackaton_v2/hackaton/app/src/main/res/layout/activity_tiempo.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/PABLO/AndroidStudioProjects/ETSIIT_Utilities/app/src/main/res/layout/activity_comedor.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/PABLO/AndroidStudioProjects/ETSIIT_Utilities/app/src/main/res/layout/activity_horarios.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/PABLO/AndroidStudioProjects/ETSIIT_Utilities/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/PABLO/AndroidStudioProjects/ETSIIT_Utilities/app/src/main/res/layout/activity_map.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/PABLO/AndroidStudioProjects/ETSIIT_Utilities/app/src/main/res/layout/activity_parking.xml" value="0.22" />
+        <entry key="..\:/Users/PABLO/AndroidStudioProjects/ETSIIT_Utilities/app/src/main/res/layout/activity_select_route.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/boton_home.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/boton_redondeado.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/degradado1.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/ic_pajaro.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/ic_sin_t_tulo_1.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/mainDegradado.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/main_degradado.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/drawable/pajaro.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_comedor.xml" value="0.25" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_foto_parking.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_horarios.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_map.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_mostrar_asignatura.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_parking.xml" value="0.5" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_select_route.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_test.xml" value="0.3134057971014493" />
+        <entry key="..\:/Users/sejovi/Desktop/NPI/ETSIIT_Utilities/app/src/main/res/layout/activity_touch_parking.xml" value="0.20677083333333332" />
+        <entry key="..\:/carlo/Documents/Trabajando/ProyectoNPI/ETSIIT_Utilities/app/src/main/res/layout/activity_comedor.xml" value="0.24864130434782608" />
+        <entry key="..\:/carlo/Documents/Trabajando/ProyectoNPI/ETSIIT_Utilities/app/src/main/res/layout/activity_horarios.xml" value="0.33" />
+        <entry key="..\:/carlo/Documents/Trabajando/ProyectoNPI/ETSIIT_Utilities/app/src/main/res/layout/activity_main.xml" value="0.2536231884057971" />
+        <entry key="..\:/carlo/Documents/Trabajando/ProyectoNPI/ETSIIT_Utilities/app/src/main/res/layout/activity_map.xml" value="0.14270833333333333" />
+        <entry key="..\:/carlo/Documents/Trabajando/ProyectoNPI/ETSIIT_Utilities/app/src/main/res/layout/activity_mostrar_asignatura.xml" value="0.27291666666666664" />
+        <entry key="..\:/carlo/Documents/Trabajando/ProyectoNPI/ETSIIT_Utilities/app/src/main/res/layout/activity_select_route.xml" value="0.14270833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

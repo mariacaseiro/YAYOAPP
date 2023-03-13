@@ -1,0 +1,5 @@
+/build
+/src/main/res/values/dimens.xml
+/src/main/res/values-land/dimens.xml
+/src/main/res/values-w1240dp/dimens.xml
+/src/main/res/values-w600dp/dimens.xml

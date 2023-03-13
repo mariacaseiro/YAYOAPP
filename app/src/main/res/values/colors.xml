@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#979797</color>
+    <color name="yellow">#EFB700</color>
+
+
+    <color name="primaryColor">#FF5031</color>
+    <color name="colorSecondary">#FFFAE8</color>
+
+    Default Colours
+    <color name="userAvatarBG">#666666</color>
+    <color name="chatPrimary">#040404</color>
+    <color name="chatPrimaryFocus">#000000</color>
+    <color name="chatPrimaryPressed">#000000</color>
+    <color name="chatPrimaryDisabled">#66020202</color>
+    <color name="chatBGnText">#FFFFFF</color>
+    <color name="chatSecondary">#FFFFFF</color>
+    <color name="chatSecondaryFocus">#F1F1F1</color>
+    <color name="chatSecondaryPressed">#E9E9E9</color>
+    <color name="chatSecondaryDisabled">#66FFFFFF</color>
+    <color name="botBGBubbleStroke">#FFCCCC</color>
+    <color name="botBGBubble">#FFCCCC</color>
+    <color name="userBGBubbleStroke">#CAE4F5</color>
+    <color name="userBGBubble">#CAE4F5</color>
+    <color name="checkbox">#161616</color>
+    <color name="statusBarColor">@color/chatPrimaryPressed</color>
+
+</resources>
