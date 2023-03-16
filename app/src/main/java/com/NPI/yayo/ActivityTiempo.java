@@ -1,9 +1,23 @@
 package com.NPI.yayo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
@@ -28,7 +42,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 //Partial tutorial: https://www.c-sharpcorner.com/article/how-to-implement-chatgpt-in-android-application/
@@ -42,14 +59,13 @@ public class ActivityTiempo extends AppCompatActivity {
     private RequestQueue mRequestQueue;
     private JsonRequest mJsonRequest;
     private String url = "https://api.openai.com/v1/chat/completions";
-    private static String context = "Te voy a pasar los datos meteorológicos de un determinado lugar. "+
-            "Quiero que me des una predicción meteorológica basada en ellos, teniendo en cuenta que lo va a leer gente de avanzada edad. "+
-            "Además, me darás una recomendación sobre qué ropa ponerme para ese tiempo. "+
-            "Hazlo todo de una manera breve y concisa. "+
+    private static String context = "Te voy a pasar los datos meteorológicos de un determinado lugar. " +
+            "Quiero que me des una predicción meteorológica basada en ellos, teniendo en cuenta que lo va a leer gente de avanzada edad. " +
+            "Además, me darás una recomendación sobre qué ropa ponerme para ese tiempo. " +
+            "Hazlo todo de una manera breve y concisa. " +
             "La predicción es la siguiente: ";
     private String prediction = "";
-    private String recomendation="Sin recomendacion";
-
+    private String recomendation = "Sin recomendacion";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +80,7 @@ public class ActivityTiempo extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        textPrediccion = (TextView) findViewById(R.id.text_prediccion);
         //Documentacion: https://github.com/Prominence/openweathermap-java-api/blob/master/docs/Release_2.3.0.md
         OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient(BuildConfig.OPENWEATHER_KEY);
         try {
@@ -86,7 +103,7 @@ public class ActivityTiempo extends AppCompatActivity {
             int humidity = weather.getHumidity().getValue();
             double windVelocity = weather.getWind().getSpeed();
 
-            this.prediction = "Hoy el cielo estará " + weatherState + " y habrá una temperatura de " + temperature + "ºC. " +
+            this.prediction = "Hoy el cielo estará " + weatherState +" y habrá una temperatura de " + temperature + "ºC. " +
                     "La humedad es del " + humidity + "% y la velocidad del viento de " + windVelocity + " km/h.";
             this.recomendation = "Te recomiendo que te pongas ";
             if (temperature < 15) {
@@ -100,18 +117,16 @@ public class ActivityTiempo extends AppCompatActivity {
                 this.recomendation += "No te olvides de coger paraguas!";
             }
 
-            textPrediccion = (TextView) findViewById(R.id.text_prediccion);
             //Allow scroll to fit prediction text to screen
             textPrediccion.setMovementMethod(new ScrollingMovementMethod());
             textPrediccion.setText("Obteniendo predicción . . .");
 
             obtainRecomendation();
         }catch(Exception e){
-            textPrediccion.setText("No es posible obtener la predicción. \n Revisa tu conexión a Internet!");
+            textPrediccion.setText("No es posible obtener la predicción. \nRevisa tu conexión a Internet!");
             e.printStackTrace();
         }
     }
-
 
     public void obtainRecomendation() {
 
@@ -182,7 +197,6 @@ public class ActivityTiempo extends AppCompatActivity {
         mJsonRequest.setRetryPolicy(policy);
 
         mRequestQueue.add(mJsonRequest);
-        System.out.println("Al final del metodo!");
     }
 
 }
