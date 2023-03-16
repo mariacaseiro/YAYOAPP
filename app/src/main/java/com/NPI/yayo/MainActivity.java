@@ -19,8 +19,10 @@ import data.IndicacionesDbHelper;
 
 // Imports de speech-to-text -------------------------------------
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import android.speech.RecognizerIntent;
+import android.widget.TextView;
 // ----------------------------------------------------------------
 
 public class MainActivity extends AppCompatActivity {
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String RUTA = "com.NPI.etsiitutilities.MESSAGE";
     public static final String AULA = "com.NPI.etsiitutilities.MESSAGE";
 
+    //variable mensaje bienvenida
+    TextView mensaje;
+
     //Lectura de indicaciones
     public static TextToSpeech textToSpeechEngine;
 
@@ -62,6 +67,19 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.CAMERA},
                     CAMERA_REQUEST);
             return;
+        }
+
+        mensaje = (TextView) findViewById(R.id.mensaje);
+
+        Calendar rightNow = Calendar.getInstance();
+        int hour = rightNow.get(Calendar.HOUR_OF_DAY);
+
+        if(5 < hour && hour < 12){
+            mensaje.setText("¡Buenos días!");
+        }else if(12 <= hour && hour < 21){
+            mensaje.setText("¡Buenas tardes!");
+        }else{
+            mensaje.setText("¡Buenas noches!");
         }
 
         //Sonidos botones
