@@ -7,6 +7,7 @@ import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 //Tutorial avaliable in: https://www.geeksforgeeks.org/how-to-create-a-chatbot-in-android-with-brainshop-api/
@@ -90,7 +92,6 @@ public class ActivityChat extends AppCompatActivity {
                 // to our bot to get response.
                 sendMessage(userMsgEdt.getText().toString());
 
-
                 // below line we are setting text in our edit text as empty
                 userMsgEdt.setText("");
             }
@@ -104,6 +105,7 @@ public class ActivityChat extends AppCompatActivity {
 
         // below line is to set layout
         // manager to our recycler view.
+        linearLayoutManager.setReverseLayout(true);
         chatsRV.setLayoutManager(linearLayoutManager);
 
         // below line we are setting
@@ -116,6 +118,7 @@ public class ActivityChat extends AppCompatActivity {
         // array list which is entered by the user.
         messageModalArrayList.add(new MessageModal(userMsg, USER_KEY));
         messageRVAdapter.notifyDataSetChanged();
+        //scroll.fullScroll(ScrollView.FOCUS_AFTER_DESCENDANTS);
 
         // creating a json object on below line.
         JSONObject jsonObject = new JSONObject();
@@ -150,6 +153,9 @@ public class ActivityChat extends AppCompatActivity {
                     String botResponse = response.getJSONArray("choices").getJSONObject(0).getJSONObject("message").getString("content");
                     messageModalArrayList.add(new MessageModal(botResponse, BOT_KEY));
                     messageRVAdapter.notifyDataSetChanged();
+                    //scroll.fullScroll(ScrollView.FOCUS_DOWN);
+                    textToSpeechEngine.setSpeechRate((float) 0.95);
+                    textToSpeechEngine.setLanguage(new Locale("es","ES"));
                     textToSpeechEngine.speak(botResponse, TextToSpeech.QUEUE_FLUSH, null, "tts1");
                     System.out.println(botResponse);
                 } catch (JSONException e) {

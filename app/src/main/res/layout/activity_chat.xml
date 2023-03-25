@@ -8,18 +8,50 @@
     tools:context=".ActivityChat">
 
     <!--recycler view to display our chats-->
+    <View
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/main_degradado"
+        android:backgroundTint="#020202"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="219dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="ASISTENTE"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/top_bar6"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintStart_toStartOf="@+id/top_bar6"
+        tools:layout_editor_absoluteY="0dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVChats"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/idLLMessage" />
+        android:layout_height="575dp"
+        android:layout_above="@+id/idLLMessage"
+        android:layout_below="@+id/top_bar"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="-4dp"
+        android:isScrollContainer="true" />
 
     <LinearLayout
         android:id="@+id/idLLMessage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="71dp"
         android:layout_alignParentBottom="true"
+        android:background="#FAF8F8"
         android:orientation="horizontal"
         android:weightSum="5">
 
@@ -27,18 +59,19 @@
         <EditText
             android:id="@+id/idEdtMessage"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="4"
-            android:hint="Introduce un mensaje..." />
+            android:hint="Introduce un mensaje..."
+            android:textSize="24sp" />
 
         <!--button to send message-->
         <ImageButton
             android:id="@+id/idIBSend"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="57dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:background="@color/purple_200"
+            android:background="@color/black"
             android:src="@android:drawable/ic_menu_send"
             app:tint="@color/white" />
 
