@@ -23,6 +23,7 @@
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="219dp"
         android:layout_height="wrap_content"
+        android:editable="false"
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
@@ -43,13 +44,13 @@
         android:layout_above="@+id/idLLMessage"
         android:layout_below="@+id/top_bar"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="-4dp"
+        android:layout_marginBottom="4dp"
         android:isScrollContainer="true" />
 
     <LinearLayout
         android:id="@+id/idLLMessage"
         android:layout_width="match_parent"
-        android:layout_height="71dp"
+        android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:background="#FAF8F8"
         android:orientation="horizontal"
@@ -68,7 +69,7 @@
         <ImageButton
             android:id="@+id/idIBSend"
             android:layout_width="0dp"
-            android:layout_height="57dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/black"

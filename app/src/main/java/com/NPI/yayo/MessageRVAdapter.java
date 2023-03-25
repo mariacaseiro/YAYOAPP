@@ -95,7 +95,7 @@ public class MessageRVAdapter extends RecyclerView.Adapter {
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing with id.
-            userTV = itemView.findViewById(R.id.idTVUser);
+            userTV = itemView.findViewById(R.id.text_gchat_message_me);
         }
     }
 
