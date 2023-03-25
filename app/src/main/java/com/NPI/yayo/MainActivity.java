@@ -285,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goMedicacion(View view) {
         mp.start();
-        Intent intent = new Intent(this, ActivityTest.class);
+        Intent intent = new Intent(this, ActivityMedicacion.class);
         startActivity(intent);
     }
     public void goTest(View view) {
