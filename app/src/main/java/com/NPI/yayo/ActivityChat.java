@@ -101,7 +101,7 @@ public class ActivityChat extends AppCompatActivity {
         messageRVAdapter = new MessageRVAdapter(messageModalArrayList, this);
 
         // below line we are creating a variable for our linear layout manager.
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ActivityChat.this, RecyclerView.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ActivityChat.this);
 
         // below line is to set layout
         // manager to our recycler view.

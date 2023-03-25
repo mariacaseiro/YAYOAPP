@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goAsistente(View view) {
         mp.start();
-        Intent intent = new Intent(this, ActivityAsistente.class);
+        Intent intent = new Intent(this, ActivityChat.class);
         startActivity(intent);
     }
 
