@@ -14,10 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
-import data.IndicacionesDbHelper;
-
-// Imports de speech-to-text -------------------------------------
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import android.speech.RecognizerIntent;
@@ -26,8 +22,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Base de datos. Se declara como Static para poder usarla en cualquier Activity con los datos cargados
-    protected static IndicacionesDbHelper database;
     private static final int CAMERA_REQUEST = 1888;
 
     private SensorManager sm;
@@ -108,21 +102,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         sd.start(sm);
-
-        /*
-        // Elementos de speech-to-text -------------------------------------------------------------
-        speakButton = (ImageButton) findViewById(R.id.speakButton);
-
-        // Si se está disponible, lo activamos en la pulsación del botón.
-        speakButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startVoiceRecognitionActivity();
-            }
-        });
-        */
-
-        // -----------------------------------------------------------------------------------------
     }
 
     private String obtenerFecha(int day, int month, int weekDay) {
@@ -184,72 +163,6 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-
-            ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-
-            /*
-            if ( matches.get(0).contains("mapa") ) {
-                startActivity(new Intent(this, ActivitySelectRoute.class));
-            } else if ( matches.get(0).contains("aula") ){
-                Intent intent = new Intent(this, ActivityMap.class);
-                intent.putExtra(RUTA, "Banho_Clase");
-                startActivity(intent);
-            } else if ( matches.get(0).contains("baño") ){
-                Intent intent = new Intent(this, ActivityMap.class);
-                intent.putExtra(RUTA, "Clase_Banho");
-                startActivity(intent);
-            } else if ( matches.get(0).contains("escaleras") ){
-                Intent intent = new Intent(this, ActivityMap.class);
-                intent.putExtra(RUTA, "Clase_EscalerasExteriores");
-                startActivity(intent);
-            } else if ( matches.get(0).contains("horario") ){
-                startActivity(new Intent(this, ActivityHorarios.class));
-            } else if ( matches.get(0).contains("parking") ){
-                startActivity(new Intent(this, ActivityParking.class));
-            } else if ( matches.get(0).contains("bicis") || matches.get(0).contains("bicicletas") ){
-                Intent intent = new Intent(this, ActivityFotoParking.class);
-                intent.putExtra("opcion", 'B');
-                startActivity(intent);
-            } else if ( matches.get(0).contains("patinetes") ){
-                Intent intent = new Intent(this, ActivityFotoParking.class);
-                intent.putExtra("opcion", 'P');
-                startActivity(intent);
-            } else if ( matches.get(0).contains("coches") || matches.get(0).contains("automoviles") ){
-                Intent intent = new Intent(this, ActivityFotoParking.class);
-                intent.putExtra("opcion", 'C');
-                startActivity(intent);
-            } else if ( matches.get(0).contains("motos") || matches.get(0).contains("motocicletas") ){
-                Intent intent = new Intent(this, ActivityFotoParking.class);
-                intent.putExtra("opcion", 'M');
-                startActivity(intent);
-            } else if ( matches.get(0).contains("comedor") ){
-                startActivity(new Intent(this, ActivityComedor.class));
-            } else if ( matches.get(0).contains("3.3") || matches.get(0).contains("33") ){
-                Intent intent = new Intent(this, ActivityMostrarAsignatura.class);
-                intent.putExtra(AULA, "Aula 3.3");
-                startActivity(intent);
-            } else if ( matches.get(0).contains("1.5") || matches.get(0).contains("15") ){
-                Intent intent = new Intent(this, ActivityMostrarAsignatura.class);
-                intent.putExtra(AULA, "Aula 1.5");
-                startActivity(intent);
-            } else{
-                Toast.makeText(getApplicationContext(), "No hay ninguna pantalla " +
-                "relacionada con: " + matches.get(0) + " - Vuelve a intentarlo", Toast.LENGTH_LONG).show();
-            }
-
-            */
-
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-
-    // ---------------------------------------------------------------------------------------------
-
-
 
     @Override
     protected void onResume() {
@@ -288,9 +201,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityMedicacion.class);
         startActivity(intent);
     }
-    public void goTest(View view) {
-        Intent intent = new Intent(this, ActivityTest.class);
-        startActivity(intent);
-    }
-
 }

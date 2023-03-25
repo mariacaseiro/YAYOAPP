@@ -39,22 +39,6 @@
             android:name=".ActivityAsistente"
             android:exported="false" /> <!-- android:theme="@style/Theme.ETSIIT_Utilities" -->
         <activity
-            android:name=".ActivityTest"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ActivityTouchParking"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ActivityFotoParking"
-            android:exported="false"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ActivityParking"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".ActivityEmergencias"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
