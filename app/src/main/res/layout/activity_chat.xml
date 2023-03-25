@@ -8,6 +8,7 @@
     tools:context=".ActivityChat">
 
     <!--recycler view to display our chats-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVChats"
         android:layout_width="match_parent"

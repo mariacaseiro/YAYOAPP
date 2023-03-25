@@ -1,6 +1,7 @@
 package com.NPI.yayo;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ public class MessageRVAdapter extends RecyclerView.Adapter {
     private ArrayList<MessageModal> messageModalArrayList;
     private Context context;
 
+    private RecyclerView rv;
+
     // constructor class.
     public MessageRVAdapter(ArrayList<MessageModal> messageModalArrayList, Context context) {
         this.messageModalArrayList = messageModalArrayList;
@@ -29,8 +32,12 @@ public class MessageRVAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
+        View recycledView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_chat, parent, false);
+        this.rv = recycledView.findViewById(R.id.idRVChats);
         // below code is to switch our
         // layout type along with view holder.
+
+        int numeroMensajes = this.getItemCount();
         switch (viewType) {
             case 0: //Bug en el tutorial original: https://es.stackoverflow.com/questions/223704/attempt-to-invoke-virtual-method-void-android-widget-textview-settextjava-lang
                 // below line we are inflating user message layout.
@@ -103,4 +110,5 @@ public class MessageRVAdapter extends RecyclerView.Adapter {
             botTV = itemView.findViewById(R.id.idTVBot);
         }
     }
+
 }

@@ -9,4 +9,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Yayo_APP"
 include ':app'
-include ':medicine'

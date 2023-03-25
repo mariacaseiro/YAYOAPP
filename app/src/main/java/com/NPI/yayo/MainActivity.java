@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
     //variable mensaje bienvenida
     TextView mensaje;
-
+    TextView fechaBienvenida;
     //Lectura de indicaciones
     public static TextToSpeech textToSpeechEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        database = new IndicacionesDbHelper(this);
+        //database = new IndicacionesDbHelper(this);
         setContentView(R.layout.activity_main);
 
         if (ActivityCompat.checkSelfPermission(getApplicationContext(),
@@ -72,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar rightNow = Calendar.getInstance();
         int hour = rightNow.get(Calendar.HOUR_OF_DAY);
+        int day = rightNow.get(Calendar.DAY_OF_MONTH);
+        int month = rightNow.get(Calendar.MONTH);
+        int weekDay = rightNow.get(Calendar.DAY_OF_WEEK);
+        System.out.println("Dia: "+day+" Mes: "+month+" Semana: "+weekDay);
+        String fecha = obtenerFecha(day,month,weekDay);
+        fechaBienvenida = (TextView) findViewById(R.id.fecha);
+        fechaBienvenida.setText(fecha);
 
         if(5 < hour && hour < 12){
             mensaje.setText("¡Buenos días!");
@@ -116,6 +123,54 @@ public class MainActivity extends AppCompatActivity {
         */
 
         // -----------------------------------------------------------------------------------------
+    }
+
+    private String obtenerFecha(int day, int month, int weekDay) {
+        String fecha = "";
+        switch (weekDay){
+            case 1:
+                fecha += "Domingo "; break;
+            case 2:
+                fecha += "Lunes "; break;
+            case 3:
+                fecha += "Martes "; break;
+            case 4:
+                fecha += "Miercoles "; break;
+            case 5:
+                fecha += "Jueves "; break;
+            case 6:
+                fecha += "Viernes"; break;
+            case 7:
+                fecha += "Sábado "; break;
+        }
+        fecha += day;
+        switch (month){
+            case 0:
+                fecha += " de Enero "; break;
+            case 1:
+                fecha += " de Febrero "; break;
+            case 2:
+                fecha += " de Marzo "; break;
+            case 3:
+                fecha += " de Abril "; break;
+            case 4:
+                fecha += " de Mayo "; break;
+            case 5:
+                fecha += " de Junio "; break;
+            case 6:
+                fecha += " de Julio "; break;
+            case 7:
+                fecha += " de Agosto "; break;
+            case 8:
+                fecha += " de Septiembre "; break;
+            case 9:
+                fecha += " de Octubre "; break;
+            case 10:
+                fecha += " de Noviembre "; break;
+            case 11:
+                fecha += " de Diciembre "; break;
+        }
+        return fecha;
     }
 
     // Métodos para Speech-to-text -----------------------------------------------------------------

@@ -1,8 +1,5 @@
 package com.NPI.yayo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -13,6 +10,9 @@ import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,6 +20,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
 
 public class ActivityMedicacion extends AppCompatActivity {
 
