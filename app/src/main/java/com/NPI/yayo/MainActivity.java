@@ -16,7 +16,6 @@ import android.widget.ImageButton;
 
 import data.IndicacionesDbHelper;
 
-
 // Imports de speech-to-text -------------------------------------
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -231,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goMedicacion(View view) {
         mp.start();
-        Intent intent = new Intent(this, ActivityMedicacion.class);
+        Intent intent = new Intent(this, ActivityTest.class);
         startActivity(intent);
     }
     public void goTest(View view) {
