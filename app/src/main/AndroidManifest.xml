@@ -1,57 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.NPI.yayo" >
+    package="com.NPI.yayo">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <queries>
+
         <!-- Specific intents you query for -->
         <intent>
             <action android:name="android.intent.action.DIAL" />
         </intent>
     </queries>
+
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@drawable/ico1"
         android:label="YAYO"
         android:roundIcon="@drawable/ico1"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name="com.NPI.yayo.ActivityTiempo"
+            android:name=".ActivityChat"
             android:exported="false" />
         <activity
-            android:name="com.NPI.yayo.ActivityMedicacion"
+            android:name=".ActivityTiempo"
             android:exported="false" />
         <activity
-            android:name="com.NPI.yayo.ActivityLlamar"
+            android:name=".ActivityMedicacion"
             android:exported="false" />
         <activity
-            android:name="com.NPI.yayo.ActivityAsistente"
+            android:name=".ActivityLlamar"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityAsistente"
             android:exported="false" /> <!-- android:theme="@style/Theme.ETSIIT_Utilities" -->
         <activity
-            android:name="com.NPI.yayo.ActivityTest"
+            android:name=".ActivityTest"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.NPI.yayo.ActivityTouchParking"
+            android:name=".ActivityTouchParking"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.NPI.yayo.ActivityFotoParking"
+            android:name=".ActivityFotoParking"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.NPI.yayo.ActivityParking"
-            android:parentActivityName="com.NPI.yayo.MainActivity"
+            android:name=".ActivityParking"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.NPI.yayo.ActivityEmergencias"
-            android:parentActivityName="com.NPI.yayo.MainActivity"
+            android:name=".ActivityEmergencias"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.tyagiabhinav.dialogflowchatlibrary.ChatbotActivity"
@@ -59,9 +64,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.NPI.yayo.MainActivity"
+            android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

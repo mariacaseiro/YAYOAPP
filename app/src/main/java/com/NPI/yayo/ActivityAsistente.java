@@ -65,4 +65,10 @@ public class ActivityAsistente extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goChat(View view) {
+        mp.start();
+        Intent intent = new Intent(this, ActivityChat.class);
+        startActivity(intent);
+    }
+
 }
