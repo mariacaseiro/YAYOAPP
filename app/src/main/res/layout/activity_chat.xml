@@ -32,9 +32,9 @@
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/top_bar6"
+        app:layout_constraintEnd_toEndOf="@+id/top_bar"
         app:layout_constraintHorizontal_bias="0.251"
-        app:layout_constraintStart_toStartOf="@+id/top_bar6"
+        app:layout_constraintStart_toStartOf="@+id/top_bar"
         tools:layout_editor_absoluteY="0dp" />
 
     <androidx.recyclerview.widget.RecyclerView

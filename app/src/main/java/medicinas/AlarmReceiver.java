@@ -1,4 +1,4 @@
-package com.NPI.yayo;
+package medicinas;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,10 +8,8 @@ import android.widget.Toast;
 public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context k1, Intent k2) {
-        // TODO Auto-generated method stub
-        Toast.makeText(k1, "Alarm received!", Toast.LENGTH_LONG).show();
+    public void onReceive(Context context, Intent intent) {
 
+        Toast.makeText(context, "ALARM", Toast.LENGTH_LONG).show();
     }
-
 }

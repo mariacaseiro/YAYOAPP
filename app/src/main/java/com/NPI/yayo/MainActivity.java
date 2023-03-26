@@ -18,6 +18,8 @@ import java.util.Calendar;
 
 import android.speech.RecognizerIntent;
 import android.widget.TextView;
+
+import medicinas.ActivityMedicinas;
 // ----------------------------------------------------------------
 
 public class MainActivity extends AppCompatActivity {
@@ -198,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goMedicacion(View view) {
         mp.start();
-        Intent intent = new Intent(this, ActivityMedicacion.class);
+        Intent intent = new Intent(this, ActivityMedicinas.class);
         startActivity(intent);
     }
 }

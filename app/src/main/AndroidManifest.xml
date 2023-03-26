@@ -39,6 +39,8 @@
             android:name=".ActivityAsistente"
             android:exported="false" /> <!-- android:theme="@style/Theme.ETSIIT_Utilities" -->
         <activity
+            android:name="medicinas.ActivityMedicinas"/>
+        <activity
             android:name=".ActivityEmergencias"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
@@ -57,6 +59,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name="medicinas.AlarmReceiver" />
     </application>
 
 </manifest>
