@@ -55,6 +55,7 @@
         android:layout_height="78dp"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="38dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="TIEMPO"

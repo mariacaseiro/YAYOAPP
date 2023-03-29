@@ -83,6 +83,7 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="248dp"
         android:layout_height="81dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="ASISTENTE"

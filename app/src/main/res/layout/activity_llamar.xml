@@ -86,6 +86,7 @@
         android:id="@+id/LLAMADAS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:editable="false"
         android:text="LLAMADAS"
         android:textColor="#FFFFFF"
         android:textSize="34sp"

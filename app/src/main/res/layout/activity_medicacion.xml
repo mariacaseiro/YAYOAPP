@@ -106,6 +106,7 @@
         android:layout_width="299dp"
         android:layout_height="80dp"
         android:layout_marginStart="44dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="MEDICACIÓN"
